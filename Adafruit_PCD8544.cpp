@@ -17,7 +17,11 @@ All text above, and the splash screen below must be included in any redistributi
 *********************************************************************/
 
 //#include <Wire.h>
-#include <avr/pgmspace.h>
+#if defined ( ESP8266 )
+  #include <pgmspace.h>
+#else
+  #include <avr/pgmspace.h>
+#endif
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
 #else
